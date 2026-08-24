@@ -19,7 +19,13 @@
             int hpPercentage = (CurrentHp * 100) / maxHp;
             Console.WriteLine($"HP Percent : {hpPercentage}%");
             Console.WriteLine();
-            Console.WriteLine("Supakit take 50 damage!");
+            Console.WriteLine("Supakit take 20 damage!");
+            CurrentHp = CurrentHp - 20;
+            Console.WriteLine();
+            Console.WriteLine("===== BOSS STATUS: AFTER DAMAGE =====");
+            Console.WriteLine($"HP : {CurrentHp}/{maxHp}");
+            int newhpPercentage = (CurrentHp * 100) / maxHp;
+            Console.WriteLine($"HP Percent : {newhpPercentage}%");
         }
     }
 }
