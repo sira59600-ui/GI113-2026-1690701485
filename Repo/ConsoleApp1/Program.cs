@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+﻿namespace Lab2
 {
     internal class Program
     {
