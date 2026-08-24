@@ -4,7 +4,22 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            string bossName = "Supakit";
+            char rank = 'F';
+            int level = 10;
+            int maxHp = 100;
+            int CurrentHp = 100;
+            float attackPower = 27.5f;
+            double critMultiplier = 1.25;
+            bool isBoss = true;
+
+            Console.WriteLine("===== BOSS STATUS: INITIAL =====");
+            Console.WriteLine();
+
+            int hpPercentage = (CurrentHp * 100) / maxHp;
+            Console.WriteLine($"HP Percent : {hpPercentage}%");
+            Console.WriteLine();
+            Console.WriteLine("Supakit take 50 damage!");
         }
     }
 }
