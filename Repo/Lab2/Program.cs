@@ -25,7 +25,7 @@
             Console.WriteLine("===== BOSS STATUS: AFTER DAMAGE =====");
             Console.WriteLine($"HP : {CurrentHp}/{maxHp}");
             int newhpPercentage = (CurrentHp * 100) / maxHp;
-            Console.WriteLine($"HP Percent : {newhpPercentage}%")
+            Console.WriteLine($"HP Percent : {newhpPercentage}%");
         }
     }
 }
