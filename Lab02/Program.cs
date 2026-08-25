@@ -42,7 +42,7 @@
             // Add many monster names
             string[] monsterNames = new[]
             {
-               "Succubus","Kobold","Troll","Manticore","Naga"
+               "Succubus","Cerberus","Troll","Manticore","Naga"
             };
 
             // Pick a random monster to appear
