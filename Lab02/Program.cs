@@ -37,6 +37,20 @@
             int newhpPercentage = (CurrentHp * 100) / maxHp;
             Console.WriteLine($"HP Percent : {newhpPercentage}%");
 
+            /////////////////////////////////////////////////Part B Random Monster to kill it and then get loot and exp
+
+            // Add many monster names
+            string[] monsterNames = new[]
+            {
+               "Succubus","Kobold","Troll","Manticore","Naga"
+            };
+
+            // Pick a random monster to appear
+            var rnd = new Random();
+            string MonsterName = monsterNames[rnd.Next(monsterNames.Length)];
+            Console.WriteLine(MonsterName + " appears!");
+
+
         }
     }
 }
