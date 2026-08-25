@@ -14,13 +14,13 @@
             bool isBoss = true;
 
             Console.WriteLine("===== BOSS STATUS: INITIAL =====");
-            Console.WriteLine($"Name : {bossName}");
-            Console.WriteLine($"Rank: {rank}");
-            Console.WriteLine($"Level: {level}");
-            Console.WriteLine($"HP: {CurrentHp} / {maxHp}");
-            Console.WriteLine($"Attack Power: {attackPower}");
-            Console.WriteLine($"Critical Multiplier: {critMultiplier}");
-            Console.WriteLine($"Is Boss: {isBoss}");
+            Console.WriteLine($"Name: {bossName}\n" +
+               $"Rank: {rank}\n" +
+               $"Level: {level}\n" +
+               $"HP: {CurrentHp} / {maxHp}\n" +
+               $"Attack Power: {attackPower}\n" +
+               $"Crit Multiplier: {critMultiplier}\n" +
+               $"Is Boss: {isBoss}");
 
             Console.WriteLine();
 
