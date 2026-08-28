@@ -4,6 +4,7 @@
     {
         static void Main(string[] args)
         {
+            //////////////////// Part A: Boss Status
             string bossName = "Kirin";
             char rank = 'S';
             int level = 7;
@@ -37,9 +38,15 @@
             int newhpPercentage = (CurrentHp * 100) / maxHp;
             Console.WriteLine($"HP Percent : {newhpPercentage}%");
 
+
             /////////////////////////////////////////////////Part B Random Monster to kill it and then get loot and exp
 
-            // Add many monster names
+
+            ////////////////!!STILL IN PROCESS!!///////////////////////////////
+
+
+
+            // Add monster names
             string[] monster = new[]
             {
                "Succubus","Cerberus","Troll","Manticore","Naga"
@@ -54,6 +61,7 @@
             {
                 Console.WriteLine("You killed the Succubus!");
                 Console.WriteLine("You got 100 gold and 50 exp!");
+
             }
             else if (MonsterName == "Cerberus")
             {
@@ -76,6 +84,8 @@
                 Console.WriteLine("You got 250 gold and 125 exp!");
 
             }
+
+            
         }
     }
 }
