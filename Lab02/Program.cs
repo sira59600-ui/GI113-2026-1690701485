@@ -101,11 +101,20 @@
             string MonsterName = monster[rnd.Next(monster.Length)];
             string loot = loots[rnd.Next(loots.Length)];
             int MonsterHp = rnd.Next(70, 250);
+            double MonsterCrit = 1.5;
+            float MonsterDMG = 17.5f;
+            char Rank = 'B';
+            bool IsEnemy = true;
+
 
             Console.WriteLine($"A {MonsterName} with {MonsterHp} HP appears!");
+            Console.WriteLine($"Monster Rank: {Rank}\n" +
+                $"Monster Damage: {MonsterDMG}\n" +
+                $"Monster Crit Multiplier: {MonsterCrit}\n" +
+                $"Is Enemy: {IsEnemy}");
 
 
-        while (MonsterHp > 0)
+            while (MonsterHp > 0)
         {
             Console.Write("Attack? (Y/N): ");
             string attackChoice = Console.ReadLine();
