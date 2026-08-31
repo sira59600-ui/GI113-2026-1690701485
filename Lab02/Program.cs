@@ -105,8 +105,6 @@
             if (MonsterName == "Succubus")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
-                Console.Write("Attack? (Y/N): ");
-                Console.ReadLine();
                 //Console.WriteLine("You killed the Succubus!");
                 // Console.WriteLine("You got 100 gold and 50 exp!");
                 //Console.WriteLine($"You also found a {loot}!");
@@ -114,8 +112,6 @@
             else if (MonsterName == "Cerberus")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
-                Console.Write("Attack? (Y/N): ");
-                Console.ReadLine();
                 // Console.WriteLine("You killed the Cerberus!");
                 // Console.WriteLine("You got 200 gold and 100 exp!");
                 // Console.WriteLine($"You also found a {loot}!");
@@ -123,8 +119,6 @@
             else if (MonsterName == "Troll")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
-                Console.Write("Attack? (Y/N): ");
-                Console.ReadLine();
                 // Console.WriteLine("You killed the Troll!");
                 //Console.WriteLine("You got 150 gold and 75 exp!");
                 //Console.WriteLine($"You also found a {loot}!");
@@ -132,15 +126,32 @@
             else if (MonsterName == "Naga")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
-                Console.Write("Attack? (Y/N): ");
-                Console.ReadLine();
                 // Console.WriteLine("You killed the Naga!");
                 //Console.WriteLine("You got 250 gold and 125 exp!");
                 // Console.WriteLine($"You also found a {loot}!");
 
             }
 
-            
+            Console.Write("Attack? (Y/N): ");
+            string attackChoice = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(attackChoice))
+            {
+                attackChoice = "N";
+            }
+
+            if (attackChoice == "Y" || attackChoice == "y")
+            {
+                Console.WriteLine("You attacked the monster!");
+            }
+            else if (attackChoice == "N" || attackChoice == "n")
+            {
+                Console.WriteLine("You chose not to attack.");
+            }
+            else
+            {
+                Console.WriteLine("Invalid input! Defaulting to No Attack.");
+            }
+
         }
     }
 }
