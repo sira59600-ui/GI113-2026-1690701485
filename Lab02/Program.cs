@@ -49,6 +49,38 @@
             string PlayerName = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(PlayerName)) PlayerName = "Player";
             Console.WriteLine($"{PlayerName} has encountered a random monster!");
+            
+            Console.WriteLine();
+
+            Console.Write("Choose your weapon (Sword or Bow or Staff): ");
+            string WeaponName = Console.ReadLine();
+            float DMG = 0.0f;
+            if (WeaponName == "Sword")
+            {
+                DMG = Random.Shared.Next((int)35.00f, (int)100.00f);
+                Console.WriteLine(DMG);
+            }
+            else if (WeaponName == "Bow")
+            { 
+                DMG = Random.Shared.Next((int)50.00f, (int)85.00f);
+                Console.WriteLine(DMG);
+            }
+            else if (WeaponName == "Staff")
+            { 
+                DMG = Random.Shared.Next((int)30.00f, (int)120.00f);
+                Console.WriteLine(DMG);
+            }
+
+            if (string.IsNullOrWhiteSpace(WeaponName)) WeaponName = "Fists";
+            if (WeaponName == "Fists")
+            {
+                DMG = Random.Shared.Next((int)15.00f, (int)30.00f);
+                Console.WriteLine(DMG);
+            }
+
+            Console.WriteLine($"{PlayerName} is using {WeaponName}!");
+
+            Console.WriteLine();
 
             // Add monster names
             string[] monster = new[]
