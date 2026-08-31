@@ -45,11 +45,15 @@
             ////////////////!!STILL IN PROCESS!!///////////////////////////////
 
 
+            Console.Write("Enter your name: ");
+            string PlayerName = Console.ReadLine();
+            if (string.IsNullOrWhiteSpace(PlayerName)) PlayerName = "Player";
+            Console.WriteLine($"{PlayerName} has encountered a random monster!");
 
             // Add monster names
             string[] monster = new[]
             {
-               "Succubus","Cerberus","Troll","Manticore","Naga"
+               "Succubus","Cerberus","Troll","Naga"
             };
             string[] loots = new[]
             {
@@ -59,43 +63,36 @@
             // Pick a random monster to appear
             var rnd = new Random();
             string MonsterName = monster[rnd.Next(monster.Length)];
-            string loot = "";
-            Console.WriteLine(MonsterName + " appears!");
+            string loot = loots[rnd.Next(loots.Length)];
+            int Hp = rnd.Next(70,250);
 
             if (MonsterName == "Succubus")
             {
-                Console.WriteLine("You killed the Succubus!");
-                Console.WriteLine("You got 100 gold and 50 exp!");
-                loot = loots[rnd.Next(loots.Length)];
-                Console.WriteLine($"You also found a {loot}!");
+                Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                //Console.WriteLine("You killed the Succubus!");
+               // Console.WriteLine("You got 100 gold and 50 exp!");
+                //Console.WriteLine($"You also found a {loot}!");
             }
             else if (MonsterName == "Cerberus")
             {
-                Console.WriteLine("You killed the Cerberus!");
-                Console.WriteLine("You got 200 gold and 100 exp!");
-                loot = loots[rnd.Next(loots.Length)];
-                Console.WriteLine($"You also found a {loot}!");
+                Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                // Console.WriteLine("You killed the Cerberus!");
+                // Console.WriteLine("You got 200 gold and 100 exp!");
+                // Console.WriteLine($"You also found a {loot}!");
             }
             else if (MonsterName == "Troll")
             {
-                Console.WriteLine("You killed the Troll!");
-                Console.WriteLine("You got 150 gold and 75 exp!");
-                loot = loots[rnd.Next(loots.Length)];
-                Console.WriteLine($"You also found a {loot}!");
-            }
-            else if (MonsterName == "Manticore")
-            {
-                Console.WriteLine("You killed the Manticore!");
-                Console.WriteLine("You got 300 gold and 150 exp!");
-                loot = loots[rnd.Next(loots.Length)];
-                Console.WriteLine($"You also found a {loot}!");
+                Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                // Console.WriteLine("You killed the Troll!");
+                //Console.WriteLine("You got 150 gold and 75 exp!");
+                //Console.WriteLine($"You also found a {loot}!");
             }
             else if (MonsterName == "Naga")
             {
-                Console.WriteLine("You killed the Naga!");
-                Console.WriteLine("You got 250 gold and 125 exp!");
-                loot = loots[rnd.Next(loots.Length)];
-                Console.WriteLine($"You also found a {loot}!");
+                Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                // Console.WriteLine("You killed the Naga!");
+                //Console.WriteLine("You got 250 gold and 125 exp!");
+                // Console.WriteLine($"You also found a {loot}!");
 
             }
 
