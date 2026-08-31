@@ -44,7 +44,9 @@
 
             ////////////////!!STILL IN PROCESS!!///////////////////////////////
 
-
+            Console.WriteLine();
+            Console.Write("===== PART B: Random Monster Encounter! =====");
+            Console.WriteLine();
             Console.Write("Enter your name: ");
             string PlayerName = Console.ReadLine();
             if (string.IsNullOrWhiteSpace(PlayerName)) PlayerName = "Player";
@@ -55,30 +57,32 @@
             Console.Write("Choose your weapon (Sword or Bow or Staff): ");
             string WeaponName = Console.ReadLine();
             float DMG = 0.0f;
+
+            if (string.IsNullOrWhiteSpace(WeaponName))
+            {
+                WeaponName = "Fists";
+            }
+
             if (WeaponName == "Sword")
             {
                 DMG = Random.Shared.Next((int)35.00f, (int)100.00f);
-                Console.WriteLine(DMG);
             }
             else if (WeaponName == "Bow")
             { 
                 DMG = Random.Shared.Next((int)50.00f, (int)85.00f);
-                Console.WriteLine(DMG);
             }
             else if (WeaponName == "Staff")
             { 
                 DMG = Random.Shared.Next((int)30.00f, (int)120.00f);
-                Console.WriteLine(DMG);
             }
-
-            if (string.IsNullOrWhiteSpace(WeaponName)) WeaponName = "Fists";
-            if (WeaponName == "Fists")
+            else
             {
+                WeaponName = "Fists";
                 DMG = Random.Shared.Next((int)15.00f, (int)30.00f);
-                Console.WriteLine(DMG);
             }
 
             Console.WriteLine($"{PlayerName} is using {WeaponName}!");
+            Console.WriteLine($"Weapon Damage : {DMG}");
 
             Console.WriteLine();
 
@@ -101,13 +105,17 @@
             if (MonsterName == "Succubus")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                Console.Write("Attack? (Y/N): ");
+                Console.ReadLine();
                 //Console.WriteLine("You killed the Succubus!");
-               // Console.WriteLine("You got 100 gold and 50 exp!");
+                // Console.WriteLine("You got 100 gold and 50 exp!");
                 //Console.WriteLine($"You also found a {loot}!");
             }
             else if (MonsterName == "Cerberus")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                Console.Write("Attack? (Y/N): ");
+                Console.ReadLine();
                 // Console.WriteLine("You killed the Cerberus!");
                 // Console.WriteLine("You got 200 gold and 100 exp!");
                 // Console.WriteLine($"You also found a {loot}!");
@@ -115,6 +123,8 @@
             else if (MonsterName == "Troll")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                Console.Write("Attack? (Y/N): ");
+                Console.ReadLine();
                 // Console.WriteLine("You killed the Troll!");
                 //Console.WriteLine("You got 150 gold and 75 exp!");
                 //Console.WriteLine($"You also found a {loot}!");
@@ -122,6 +132,8 @@
             else if (MonsterName == "Naga")
             {
                 Console.WriteLine($"A {MonsterName} with {Hp} HP appears!");
+                Console.Write("Attack? (Y/N): ");
+                Console.ReadLine();
                 // Console.WriteLine("You killed the Naga!");
                 //Console.WriteLine("You got 250 gold and 125 exp!");
                 // Console.WriteLine($"You also found a {loot}!");
