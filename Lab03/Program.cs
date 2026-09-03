@@ -1,4 +1,12 @@
-﻿namespace Lab03
+﻿/*
+ * Student ID : 1690701485
+ * Name       : Lab02
+ * Section    : 129B
+ * No.        : 21
+ * Course     : GI113 Computer Programming (GI)
+ */
+
+namespace Lab03
 {
     internal class Program
     {
@@ -35,8 +43,17 @@
             Console.WriteLine($"HP Percent (exact): {hpPercentageExact}%");
 
             // Explicit casting attack power (float) -->> int
+            Console.WriteLine("\n----- Explicit Cast: Attack Power -> Display Int -----");
+            int attackDisplay = (int)attackPower;
+            Console.WriteLine($"Attack Power (int cast): {attackDisplay}\n");
 
             // Cast vs. Convert: Crit Multiplier
+            Console.WriteLine("\n----- Cast vs Convert: Crit Multiplier -----");
+            
+            int critCast = (int)critMultiplier;
+            int critConvert = Convert.ToInt32(critMultiplier);
+            Console.WriteLine($"Crit Multiplier (int cast): {critCast}");
+            Console.WriteLine($"Crit Multiplier (Convert rounded): {critConvert}");
         }
     }
 }
