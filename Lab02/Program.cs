@@ -42,8 +42,6 @@
             /////////////////////////////////////////////////Part B Random Monster to kill it and then get loot and exp
 
 
-            ////////////////!!STILL IN PROCESS!!///////////////////////////////
-
             Console.WriteLine();
             Console.Write("===== PART B: Random Monster Encounter! =====");
             Console.WriteLine();
@@ -96,14 +94,14 @@
                 "Weapon","Armor","Potion"
             };
 
-            // Pick a random monster to appear
+            /////////////////////////////////////////////////Show Monster Stats
             var rnd = new Random();
             string MonsterName = monster[rnd.Next(monster.Length)];
             string loot = loots[rnd.Next(loots.Length)];
             int MonsterHp = rnd.Next(70, 250);
             double MonsterCrit = 1.5;
-            float MonsterDMG = 17.5f;
-            char Rank = 'B';
+            float MonsterDMG = 25.00f + Random.Shared.NextSingle() * (50.00f - 25.00f);
+            char Rank = (char)rnd.Next('A', 'B' + 1);
             bool IsEnemy = true;
 
 
