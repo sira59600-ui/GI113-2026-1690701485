@@ -45,7 +45,7 @@ namespace Lab03
             // Explicit casting attack power (float) -->> int
             Console.WriteLine("\n----- Explicit Cast: Attack Power -> Display Int -----");
             int attackDisplay = (int)attackPower;
-            Console.WriteLine($"Attack Power (int cast): {attackDisplay}\n");
+            Console.WriteLine($"Attack Power (int cast): {attackDisplay}");
 
             // Cast vs. Convert: Crit Multiplier
             Console.WriteLine("\n----- Cast vs Convert: Crit Multiplier -----");
