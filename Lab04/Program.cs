@@ -53,7 +53,17 @@
             Console.WriteLine($"Rating: {rating}");
             //---------------------------------------------------------------------3
             //---------------------------------------------------------------------4
-
+            Console.WriteLine();
+            Console.WriteLine("+------------------------+");
+            Console.WriteLine("|      NEW SAVE FILE      |");
+            Console.WriteLine("+------------------------+");
+            Console.Write("Enter save name");
+            string saveName = Console.ReadLine();
+            Console.Write("Choose save slot (1-3)");
+            bool slotOk = int.TryParse(Console.ReadLine(), out int slot);
+            Console.WriteLine($"Save name: {saveName}");
+            Console.WriteLine($"Valid input: {slotOk}");
+            Console.WriteLine($"Slot: {slot}");
             //---------------------------------------------------------------------4
         }
     }
