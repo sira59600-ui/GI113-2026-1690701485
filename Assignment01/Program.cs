@@ -14,41 +14,50 @@ namespace Assignment01
         {
             string GameStartingTitle = "         \"GAME\"";
             string GameTitle = "!! 'Pepo Destruction' !!";
-            const string StartingText = "!== Begin Your Journey ==!";
+            const string StartingText = "!== Begin Your Journey ==!"; //Const
 
             string CharacterName = "Bobby The Wizard Cheese";
-            var BloodType = 'A';
+            var BloodType = 'A'; //Varตัวที่1
             int CharacterAge = 18;
             float Sanity = 30.75f;
             double AuraPower = 67.67;
-            var IsHuman = true;
+            var IsHuman = true; //Varตัวที่2
             bool IsMonster = false;
 
-            Console.WriteLine($"{GameStartingTitle}");
-            Console.WriteLine($"{GameTitle}");
-            Console.WriteLine($"{StartingText}");
-
-            Console.WriteLine($"Name        : {CharacterName}");
-            Console.WriteLine($"BloodType   : {BloodType}");
-            Console.WriteLine($"Age         : {CharacterAge}");
-            Console.WriteLine($"Sanity      : {Sanity}");
-            Console.WriteLine($"AuraPower   : {AuraPower}");
+            Console.WriteLine($"        {GameStartingTitle}");
+            Console.WriteLine($"         {GameTitle}");
+            Console.WriteLine($"        {StartingText}");
 
             Console.WriteLine();
 
-            Console.WriteLine($"           \"RACE\"");
-            Console.WriteLine($"=-_<°. HUMAN || MONSTER -_>°.=");
-            Console.WriteLine($"======= {IsHuman} || {IsMonster} ======="); 
+            Console.WriteLine($"===========================================");
+            Console.WriteLine($" ||       \"YOUR CHARACTER STATS\"        ||");
+            Console.WriteLine($" ||                                     ||");
+
+            Console.WriteLine($" ||Name        : {CharacterName}||");
+            Console.WriteLine($" ||BloodType   : {BloodType}                      ||");
+            Console.WriteLine($" ||Age         : {CharacterAge}                     ||");
+            Console.WriteLine($" ||Sanity      : {Sanity}                  ||");
+            Console.WriteLine($" ||AuraPower   : {AuraPower}                  ||");
+            Console.WriteLine($"===========================================");
 
             Console.WriteLine();
 
-            double heroLevelAsDouble = CharacterAge; // implicit — ไม่มี cast
-            Console.WriteLine($"Level as double (implicit): {heroLevelAsDouble}");
+            Console.WriteLine($"                 \"RACE\"");
+            Console.WriteLine($"      =-_<°. HUMAN || MONSTER -_>°.=");
+            Console.WriteLine($"      ======= {IsHuman} || {IsMonster} ======="); 
 
-            int staminaTruncated = (int)AuraPower;               // explicit cast
-            int staminaRounded = Convert.ToInt32(AuraPower);      // Convert
-            Console.WriteLine($"Stamina cast (truncates)  : {staminaTruncated}");
-            Console.WriteLine($"Stamina Convert (rounds)  : {staminaRounded}");
+            Console.WriteLine();
+
+            Console.WriteLine($"-------------------------------------------");
+            int AuraPowerAsInt = (int)AuraPower; //Explicit Cast
+            int AuraRounded = Convert.ToInt32(AuraPower); //Convert
+            Console.WriteLine($"AuraPowerAsInt (Explicit Cast) : {AuraPowerAsInt}");
+            Console.WriteLine($"AuraRounded (Convert) : {AuraRounded}");
+
+            float CharacterAgeAsFloat = CharacterAge; //Implicit Conversion
+            Console.WriteLine($"CharacterAge as float (implicit): {CharacterAgeAsFloat}");
+            Console.WriteLine($"-------------------------------------------");
         }
     }
 }
