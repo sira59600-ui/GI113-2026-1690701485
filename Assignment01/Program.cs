@@ -12,12 +12,12 @@ namespace Assignment01
     {
         static void Main(string[] args)
         {
-            string GameStartingTitle = "         \"GAME\"";
+            var GameStartingTitle = "         \"GAME\""; //Varตัวที่1
             string GameTitle = "!! 'Pepo Destruction' !!";
             const string StartingText = "!== Begin Your Journey ==!"; //Const
 
             string CharacterName = "Bobby The Wizard Cheese";
-            var BloodType = 'A'; //Varตัวที่1
+            char BloodType = 'A'; 
             int CharacterAge = 18;
             float Sanity = 30.75f;
             double AuraPower = 67.67;
