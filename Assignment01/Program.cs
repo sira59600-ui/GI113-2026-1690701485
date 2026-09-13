@@ -12,16 +12,17 @@ namespace Assignment01
     {
         static void Main(string[] args)
         {
-            var GameStartingTitle = "         \"GAME\""; //Varตัวที่1
+            var GameStartingTitle = "         \"GAME\""; //Var ตัวที่1 แทน string
             string GameTitle = "!! 'Pepo Destruction' !!";
-            const string StartingText = "!== Begin Your Journey ==!"; //Const
+            const string StartingText = "!== Begin Your Journey ==!"; //const
 
             string CharacterName = "Bobby The Wizard Cheese";
             char BloodType = 'A'; 
+            var CharacterGender = 'M'; //Var ตัวที่2 แทน char
             int CharacterAge = 18;
             float Sanity = 30.75f;
             double AuraPower = 67.67;
-            var IsHuman = true; //Varตัวที่2
+            var IsHuman = true; //Var ตัวที่3 แทน bool
             bool IsMonster = false;
 
             Console.WriteLine($"        {GameStartingTitle}");
@@ -36,6 +37,7 @@ namespace Assignment01
 
             Console.WriteLine($" ||Name        : {CharacterName}||");
             Console.WriteLine($" ||BloodType   : {BloodType}                      ||");
+            Console.WriteLine($" ||Gender      : {CharacterGender}                      ||");
             Console.WriteLine($" ||Age         : {CharacterAge}                     ||");
             Console.WriteLine($" ||Sanity      : {Sanity}                  ||");
             Console.WriteLine($" ||AuraPower   : {AuraPower}                  ||");
