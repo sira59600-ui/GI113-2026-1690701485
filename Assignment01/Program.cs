@@ -61,7 +61,17 @@ namespace Assignment01
             Console.WriteLine();
 
             Console.WriteLine($"╔═════════════════════════════════════════════════════════════════════╗");
-            Console.WriteLine($"║                        TYPE CONVERSION ANALYSIS                     ║");
+            Console.WriteLine($"║                           CHOOSE YOUR AURA                          ║");
+            Console.WriteLine($"╚═════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine();
+            Console.WriteLine($"AURPOWER NOW : {AuraPower}");
+            Console.WriteLine();
+            Console.WriteLine($"          1)                    2)                    3)                    4)");
+            Console.WriteLine($"         FIRE                  DARK                  MEME                  LIGHT");
+            Console.WriteLine();
+
+            Console.WriteLine($"╔═════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                       TYPE CONVERSION ANALYSIS                      ║");
             Console.WriteLine($"╚═════════════════════════════════════════════════════════════════════╝");
             int AuraPowerAsInt = (int)AuraPower; //Explicit Cast
             int AuraRounded = Convert.ToInt32(AuraPower); //Convert
