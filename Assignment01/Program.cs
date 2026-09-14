@@ -12,8 +12,7 @@ namespace Assignment01
     {
         static void Main(string[] args)
         {
-            var GameStartingTitle = "         \"GAME\""; //Var ตัวที่1 แทน string
-            string GameTitle = "!! 'Pepo Destruction' !!";
+            var GameStartingTitle = "         GAME"; //Var ตัวที่1 แทน string     
             const string StartingText = "!== Begin Your Journey ==!"; //const
 
             string CharacterName = "Bobby The Wizard Cheese";
@@ -25,41 +24,95 @@ namespace Assignment01
             var IsHuman = true; //Var ตัวที่3 แทน bool
             bool IsMonster = false;
 
-            Console.WriteLine($"        {GameStartingTitle}");
-            Console.WriteLine($"         {GameTitle}");
-            Console.WriteLine($"        {StartingText}");
+            Console.WriteLine();
+            Console.WriteLine($"╔════════════════════════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                                                                                        ║");
+            Console.WriteLine($"║                                                                          {GameStartingTitle} ║");
+            Console.WriteLine($"║                                                                                        ║");
+            Console.WriteLine($"████  █████ ████   ███     ████  █████  ████ █████ ████  █   █  ███  █████ ███  ███  █   █");
+            Console.WriteLine($"█░░░█ █░░░░░█░░░█ █ ░░█    █░░░█ █░░░░░█ ░░░░ ░█░░░█░░░█ █░  █░█ ░░░  ░█░░░ █░░█ ░░█ ██  █░");  
+            Console.WriteLine($"████░░████░░████░░█░ ░█░   █░░░█░████░░░███░░░ █░░░████░░█░░ █░█░ ░░░  █░░░░█░░█░ ░█░█░█ █░░"); 
+            Console.WriteLine($"█░░░░ █░░░░ █░░░░ █░░ █░░  █░░ █░█░░░░   ░░█   █░░ █░░█░ █░░ █░█░░     █░░  █░░█░░ █░█░░██░░"); 
+            Console.WriteLine($"█░░░░░█████░█░░░░░ ███ ░░  ████ ░█████░████░░  █░░ █░░░█░ ███ ░░███    █░░ ███░ ███ ░█░░ █░░"); 
+            Console.WriteLine($"░░    ░░░░░ ░░     ░░░ ░   ░░░░ ░░░░░░ ░░░░ ░  ░░  ░░  ░  ░░░ ░ ░░░    ░░  ░░░  ░░░ ░░░  ░░"); 
+            Console.WriteLine($"░     ░░░░░ ░      ░░░     ░░░░  ░░░░░ ░░░░    ░   ░   ░  ░░░   ░░░    ░   ░░░  ░░░  ░   ░"); 
+            Console.WriteLine($"║                                                                                        ║");
+            Console.WriteLine($"║                                                                                        ║");
+            Console.WriteLine($"║                                                                                        ║");
+            Console.WriteLine($"╚════════════════════════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine($"{StartingText}");
+            Console.WriteLine($"╔═════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                 YOUR CHARACTER STATS & ATTRIBUTES                   ║");
+            Console.WriteLine($"╚═════════════════════════════════════════════════════════════════════╝");
 
+            Console.WriteLine($"Name        : {CharacterName}");
+            Console.WriteLine($"BloodType   : {BloodType}");
+            Console.WriteLine($"Gender      : {CharacterGender}");
+            Console.WriteLine($"Age         : {CharacterAge}");
+            Console.WriteLine($"Sanity      : {Sanity}%");
+            Console.WriteLine($"AuraPower   : {AuraPower}");
+
+            Console.WriteLine($"╔═════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                              YOUR RACE                              ║");
+            Console.WriteLine($"╚═════════════════════════════════════════════════════════════════════╝");
+            Console.WriteLine();
+            Console.WriteLine($"HUMAN   : {IsHuman}");
+            Console.WriteLine($"MONSTER : {IsMonster}");
             Console.WriteLine();
 
-            Console.WriteLine($"===========================================");
-            Console.WriteLine($" ||       \"YOUR CHARACTER STATS\"        ||");
-            Console.WriteLine($" ||                                     ||");
-
-            Console.WriteLine($" ||Name        : {CharacterName}||");
-            Console.WriteLine($" ||BloodType   : {BloodType}                      ||");
-            Console.WriteLine($" ||Gender      : {CharacterGender}                      ||");
-            Console.WriteLine($" ||Age         : {CharacterAge}                     ||");
-            Console.WriteLine($" ||Sanity      : {Sanity}                  ||");
-            Console.WriteLine($" ||AuraPower   : {AuraPower}                  ||");
-            Console.WriteLine($"===========================================");
-
-            Console.WriteLine();
-
-            Console.WriteLine($"                 \"RACE\"");
-            Console.WriteLine($"      =-_<°. HUMAN || MONSTER -_>°.=");
-            Console.WriteLine($"      ======= {IsHuman} || {IsMonster} ======="); 
-
-            Console.WriteLine();
-
-            Console.WriteLine($"-------------------------------------------");
+            Console.WriteLine($"╔═════════════════════════════════════════════════════════════════════╗");
+            Console.WriteLine($"║                        TYPE CONVERSION ANALYSIS                     ║");
+            Console.WriteLine($"╚═════════════════════════════════════════════════════════════════════╝");
             int AuraPowerAsInt = (int)AuraPower; //Explicit Cast
             int AuraRounded = Convert.ToInt32(AuraPower); //Convert
-            Console.WriteLine($"AuraPowerAsInt (Explicit Cast) : {AuraPowerAsInt}");
-            Console.WriteLine($"AuraRounded (Convert) : {AuraRounded}");
+            Console.WriteLine($"AuraPower (Explicit Cast)  : {AuraPowerAsInt}");
+            Console.WriteLine($"AuraPower (Convert)        : {AuraRounded}");
 
             float CharacterAgeAsFloat = CharacterAge; //Implicit Conversion
-            Console.WriteLine($"CharacterAge as float (implicit): {CharacterAgeAsFloat}");
-            Console.WriteLine($"-------------------------------------------");
+            Console.WriteLine($"CharacterAge (Implicit)    : {CharacterAgeAsFloat}");
+
+            Console.WriteLine();
+            Console.WriteLine($"                                           ██████                                 ");
+            Console.WriteLine($"                                      █ █ ██    █████                             ");
+            Console.WriteLine($"                           █   █   ██████ ██     █████                            ");
+            Console.WriteLine($"                    ███████     ███  ██ █ █████  █   ██    ███    ████            ");
+            Console.WriteLine($"                  █████    █  ███████    █ ███ █     ███   ████     ████          ");
+            Console.WriteLine($"                █████ █       ██   █  ██  █   █         ██     █  ██  ███         ");
+            Console.WriteLine($"               ████   █████████  ████             ███   ████   ██   ██  ██        ");
+            Console.WriteLine($"      █           █   ██████████████████    █       ███████    █████ ████         ");
+            Console.WriteLine($"     █           █              ██████████   █    ████    ████████████     ██████ ");
+            Console.WriteLine($" █              ██                   ███████    ████               ██████████████ ");
+            Console.WriteLine($" █           █████                                             ███   ███ ████     ");
+            Console.WriteLine($" ████████████████                                           ███        █ ██       ");
+            Console.WriteLine($"  ████████████                                                ████     ███        ");
+            Console.WriteLine($"        ███   ██████                                                              ");
+            Console.WriteLine($" █          █ ████████                                                            ");
+            Console.WriteLine($"           █                                                                      ");
+            Console.WriteLine($"         ██                                                                       ");
+            Console.WriteLine($"        ███       ████                                                            ");
+            Console.WriteLine($"        █        █  ██                                                            ");
+            Console.WriteLine($"             █ █ ██                                               ████            ");
+            Console.WriteLine($"       █     █                           ████                   ███████           ");
+            Console.WriteLine($"       █    ██  █                       ███████               █████████           ");
+            Console.WriteLine($"        █████                           ███ ████            █████    ██           ");
+            Console.WriteLine($"          ██                            ███  ███████████████████    ███          ");
+            Console.WriteLine($"                                         ██    ███████████████     ████           ");
+            Console.WriteLine($"                                         ██ ███  ██        ██  █   ███            ");
+            Console.WriteLine($"                                        ██████████       █ █ █████ ███            ");
+            Console.WriteLine($"                                       █████████ ██       ███  ███ ███            ");
+            Console.WriteLine($"                                       ████   ███ ██     ██  ████  ███            ");
+            Console.WriteLine($" ███                                  ███    ███ █  █████  ██    ██ ███           ");
+            Console.WriteLine($" ███████████████████████████████████████        █████ █ █████       █████████████ ");
+            Console.WriteLine($" ███████████████████████████████████████ ████      ███ ███      ████ ████████████ ");
+            Console.WriteLine($"                        ███████████████         ████████████         ████████████ ");
+            Console.WriteLine($"                                                   █               █████          ");
+            Console.WriteLine($"                                               ████       █       ██  █           ");
+            Console.WriteLine($"                                                     ██        ███     █          ");
+            Console.WriteLine($"                                         ██   ██████ ██  ██████        █          ");
+            Console.WriteLine($"                                     ██  ██████████  ██  █             █          ");
+            Console.WriteLine($"                                    ██                   ██            █          ");
+            Console.WriteLine($"                                    ██                                 ██         ");
+            Console.WriteLine($"                                     █                             ██  █          ");
         }
     }
 }
