@@ -38,7 +38,7 @@
             heroHP += potionHeal;// แนะนำแบบนี้ คำนวณเหมือนกับ 1 = 1+2
             Console.WriteLine($"Hero drinks a potion, Healing: {potionHeal}HP. health is now {heroHP}");
             int normalDamage = Math.Max(0, heroATK - monsterDEF);
-            Console.WriteLine($"Normal Damage: {normalDamage}");
+            Console.WriteLine($"Normal attack deal: {normalDamage}");
         }
     }
 }
