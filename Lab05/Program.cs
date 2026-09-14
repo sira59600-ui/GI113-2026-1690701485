@@ -37,8 +37,25 @@
             // 2.
             heroHP += potionHeal;// แนะนำแบบนี้ คำนวณเหมือนกับ 1 = 1+2
             Console.WriteLine($"Hero drinks a potion, Healing: {potionHeal}HP. health is now {heroHP}");
+
+            //คำนวณ damage normal attack (Arithmetic + Math)
             int normalDamage = Math.Max(0, heroATK - monsterDEF);
-            Console.WriteLine($"Normal attack deal: {normalDamage}");
+            Console.WriteLine($"Normal attack deal: {normalDamage} DMG");
+
+            //คำนวณ power attack (Predence ลำดับการคำนวญ คูณก่อนที่จะลบ)
+            int powerDamage = Math.Max(0, (heroATK * 2) - monsterDEF); // เรียงลำดับ * มาก่อน - ไม่จำเป็นต้องมี ()
+            Console.WriteLine($"Power attack deal: {powerDamage} DMG");
+
+            //คำนวญ Monster attack
+            int counterDamage = Math.Max(0, (monsterATK / 2) - heroDEF);
+            Console.WriteLine($"Monster counter attack deal: {counterDamage} DMG");
+
+            Random rng = new Random();
+            int roll = rng.Next(1, 101);
+            bool isCritical = roll <= 10; // 10%
+            int critDamage = normalDamage + Convert.ToInt32(isCritical) * normalDamage; // โอกาส 10% ติดคริ เลขได้ 1 ไม่ติดได้ 0
+            Console.WriteLine($"Critical hit roll : {roll} (Critical: {isCritical})");
+            Console.WriteLine($"Normal attack would deal Critical: {critDamage} DMG");
         }
     }
 }
