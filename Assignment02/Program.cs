@@ -4,47 +4,93 @@
     {
         static void Main(string[] args)
         {
-            var IronSmeltRate = 0.2500;
-            var IronBreakdownRate = 0.3000;
+            var SilverSmeltRate = 0.2500;
+            var SilverBreakdownRate = 0.3000;
 
-            var SilverRate = 0.5;
-            var SilverBreakdownRate = 0.8;
+            var MaxBatchAmount = 500;
+            var MinBatchAmount = 0;
 
-            Console.WriteLine("Startoooooo!!");
+            var ErrorMenuCheck = string.Empty;
+            var ErrorAmountCheck = string.Empty;
+
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine("╔════════════════════════════════════╗");
+            Console.WriteLine("║         🔥 The Forge eiei 🔥       ║");
+            Console.WriteLine("╚════════════════════════════════════╝");
+            Console.ResetColor();
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Choose an option:");
-            Console.WriteLine("S For Smelt");
-            Console.WriteLine("B For Breakdown");
-            Console.Write("Choose : ");
+            Console.ResetColor();
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("  [S] - Smelt (Ore → Ingot)");
+            Console.WriteLine("  [B] - Breakdown (Ingot → Ore)");
+            Console.ResetColor();
+            Console.Write("Your choice: ");
+            Console.ForegroundColor = ConsoleColor.White;
 
+            ///Menu Input
             bool Choice = char.TryParse(Console.ReadLine(), out char userChoice);
+            Console.ResetColor();
             Console.WriteLine();
             if (userChoice == 'S' || userChoice == 's')
             {
-                Console.WriteLine("You Choose Smelt");
-
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("✓ You chose: SMELT (Ore → Ingot)");
+                Console.ResetColor();
             }
             else if (userChoice == 'B' || userChoice == 'b')
             {
-                Console.WriteLine("You Choose Breakdown");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("✓ You chose: BREAKDOWN (Ingot → Ore)");
+                Console.ResetColor();
             }
             else
             {
-                Console.WriteLine("Invalid choice. Please select 'S' for Smelt or 'B' for Breakdown.");
+                ErrorMenuCheck = "Error Menu";
             }
 
+            ///Amout Input
             Console.Write("Choose amount: ");
             bool AmountInput = double.TryParse(Console.ReadLine(), out double Amount);
-            Console.WriteLine($"Your amount: {Amount}");
 
-            if (userChoice == 'S' || userChoice == 's')
+             if(AmountInput && Amount > MaxBatchAmount || AmountInput && Amount <= MinBatchAmount)
             {
-                double IronSmelted = Amount * IronSmeltRate;
-                Console.WriteLine($"{Amount} Iron Ore = Iron Ingot: {IronSmelted}");//Ore to Ingot
+                ErrorAmountCheck = "Error Amount";
             }
-            else if (userChoice == 'B' || userChoice == 'b')
+             else if(!AmountInput)
+                {
+                ErrorAmountCheck = "Error Amount";
+                }
+
+            ///Smelt or Breakdown Calculation
+            if (userChoice == 'S' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty || userChoice == 's' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty)
             {
-                double IronBrokenDown = Amount / IronBreakdownRate;
-                Console.WriteLine($"{Amount} Iron Ingot = Iron Ore: {IronBrokenDown}");//Ingot to Ore
+                double SilverSmelted = Amount * SilverSmeltRate;
+                Console.WriteLine($"{Amount} Silver Ore = Silver Ingot: {SilverSmelted:F2}");//Ore to Ingot
+            }
+            else if (userChoice == 'B' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty || userChoice == 'b' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty)
+            {
+                double SilverBrokenDown = Amount / SilverBreakdownRate;
+                Console.WriteLine($"{Amount} Silver Ingot = Silver Ore: {SilverBrokenDown:F2}");//Ingot to Ore
+            }
+
+            //Error Checking
+            else if (ErrorMenuCheck != string.Empty || ErrorAmountCheck != string.Empty)
+            {
+                if (ErrorMenuCheck != string.Empty && ErrorAmountCheck == string.Empty)
+                {
+                    Console.WriteLine($"{ErrorMenuCheck}");
+                }
+                else if (ErrorMenuCheck == string.Empty && ErrorAmountCheck != string.Empty)
+                {
+                    Console.WriteLine($"{ErrorAmountCheck}");
+                }
+                else
+                {
+                    Console.WriteLine($"{ErrorMenuCheck} and {ErrorAmountCheck}");
+                }
             }
         }
     }
