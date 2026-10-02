@@ -12,11 +12,11 @@ namespace Assignment02
     {
         static void Main(string[] args)
         {
-            var SilverSmeltRate = 0.4500;
-            var SilverBreakdownRate = 0.6000;
+           const double SilverSmeltRate = 0.4500;
+            const double SilverBreakdownRate = 0.6000;
 
-            var MaxBatchAmount = 500;
-            var MinBatchAmount = 0;
+            const int MaxBatchAmount = 500;
+            const int MinBatchAmount = 0;
 
             var ErrorMenuCheck = string.Empty;
             var ErrorAmountCheck = string.Empty;
