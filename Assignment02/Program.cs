@@ -4,8 +4,8 @@
     {
         static void Main(string[] args)
         {
-            var SilverSmeltRate = 0.2500;
-            var SilverBreakdownRate = 0.3000;
+            var SilverSmeltRate = 0.4500;
+            var SilverBreakdownRate = 0.6000;
 
             var MaxBatchAmount = 500;
             var MinBatchAmount = 0;
@@ -14,45 +14,36 @@
             var ErrorAmountCheck = string.Empty;
 
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             Console.WriteLine("╔════════════════════════════════════╗");
-            Console.WriteLine("║         🔥 The Forge eiei 🔥       ║");
+            Console.WriteLine("║           THE FORGE GAME           ║");
             Console.WriteLine("╚════════════════════════════════════╝");
             Console.ResetColor();
-            Console.WriteLine();
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Choose an option:");
-            Console.ResetColor();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("  [S] - Smelt (Ore → Ingot)");
-            Console.WriteLine("  [B] - Breakdown (Ingot → Ore)");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("  [S] - Smelt (Ore --> Ingot)");
+            Console.WriteLine("  [B] - Breakdown (Ingot --> Ore)");
             Console.ResetColor();
             Console.Write("Your choice: ");
-            Console.ForegroundColor = ConsoleColor.White;
 
             ///Menu Input
             bool Choice = char.TryParse(Console.ReadLine(), out char userChoice);
-            Console.ResetColor();
-            Console.WriteLine();
             if (userChoice == 'S' || userChoice == 's')
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("✓ You chose: SMELT (Ore → Ingot)");
-                Console.ResetColor();
+                Console.WriteLine("You chose: Smelt (Ore --> Ingot)");
             }
             else if (userChoice == 'B' || userChoice == 'b')
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine("✓ You chose: BREAKDOWN (Ingot → Ore)");
-                Console.ResetColor();
+                Console.WriteLine("You chose: Breakdown (Ingot --> Ore)");
             }
             else
             {
                 ErrorMenuCheck = "Error Menu";
             }
 
-            ///Amout Input
-            Console.Write("Choose amount: ");
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write("Enter amount (1-500): ");
+            Console.ResetColor();
             bool AmountInput = double.TryParse(Console.ReadLine(), out double Amount);
 
              if(AmountInput && Amount > MaxBatchAmount || AmountInput && Amount <= MinBatchAmount)
@@ -67,29 +58,54 @@
             ///Smelt or Breakdown Calculation
             if (userChoice == 'S' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty || userChoice == 's' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty)
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("╔════════════════════════════════════╗");
+                Console.WriteLine("║               RESULT               ║");
+                Console.WriteLine("╚════════════════════════════════════╝");
+                Console.ResetColor();
                 double SilverSmelted = Amount * SilverSmeltRate;
-                Console.WriteLine($"{Amount} Silver Ore = Silver Ingot: {SilverSmelted:F2}");//Ore to Ingot
+                Console.WriteLine($"{Amount:F2} Silver Ore = {SilverSmelted:F2} Silver Ingot");
             }
             else if (userChoice == 'B' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty || userChoice == 'b' && ErrorMenuCheck == string.Empty && ErrorAmountCheck == string.Empty)
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("╔════════════════════════════════════╗");
+                Console.WriteLine("║               RESULT               ║");
+                Console.WriteLine("╚════════════════════════════════════╝");
+                Console.ResetColor();
                 double SilverBrokenDown = Amount / SilverBreakdownRate;
-                Console.WriteLine($"{Amount} Silver Ingot = Silver Ore: {SilverBrokenDown:F2}");//Ingot to Ore
+                Console.WriteLine($"{Amount:F2} Silver Ingot = {SilverBrokenDown:F2} Silver Ore");
             }
 
             //Error Checking
             else if (ErrorMenuCheck != string.Empty || ErrorAmountCheck != string.Empty)
             {
+                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("╔════════════════════════════════════╗");
+                Console.WriteLine("║               ERROR                ║");
+                Console.WriteLine("╚════════════════════════════════════╝");
+                Console.ResetColor();
+
                 if (ErrorMenuCheck != string.Empty && ErrorAmountCheck == string.Empty)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{ErrorMenuCheck}");
+                    Console.ResetColor();
                 }
                 else if (ErrorMenuCheck == string.Empty && ErrorAmountCheck != string.Empty)
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{ErrorAmountCheck}");
+                    Console.ResetColor();
                 }
                 else
                 {
+                    Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine($"{ErrorMenuCheck} and {ErrorAmountCheck}");
+                    Console.ResetColor();
                 }
             }
         }
